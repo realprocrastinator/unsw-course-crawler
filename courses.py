@@ -82,19 +82,19 @@ def out_put(fname, year):
         f.write(f"\n### Offered {year}T1:\n")
         # format https://www.handbook.unsw.edu.au/postgraduate/courses/2020/comp9021/
         for i in T1_offered:
-            f.write('[{0}](http://timetable.unsw.edu.au/{2}/{0}.html) [{1}](https://www.handbook.unsw.edu.au/postgraduate/courses/{2}/{0})\n'.format(i[0].lower(), i[1], year))
+            f.write('[{0}](http://timetable.unsw.edu.au/{2}/{3}.html) [{1}](https://www.handbook.unsw.edu.au/postgraduate/courses/{2}/{0})\n'.format(i[0].lower(), i[1], year, i[0].upper()))
         
         f.write(f"\n### Offered {year}T2:\n")
         for i in T2_offered:
-            f.write('[{0}](http://timetable.unsw.edu.au/{2}/{0}.html) [{1}](https://www.handbook.unsw.edu.au/postgraduate/courses/{2}/{0})\n'.format(i[0].lower(), i[1], year))
+            f.write('[{0}](http://timetable.unsw.edu.au/{2}/{3}.html) [{1}](https://www.handbook.unsw.edu.au/postgraduate/courses/{2}/{0})\n'.format(i[0].lower(), i[1], year, i[0].upper()))
         
         f.write(f"\n### Offered {year}T3:\n")
         for i in T3_offered:
-            f.write('[{0}](http://timetable.unsw.edu.au/{2}/{0}.html) [{1}](https://www.handbook.unsw.edu.au/postgraduate/courses/{2}/{0})\n'.format(i[0].lower(), i[1], year))
+            f.write('[{0}](http://timetable.unsw.edu.au/{2}/{3}.html) [{1}](https://www.handbook.unsw.edu.au/postgraduate/courses/{2}/{0})\n'.format(i[0].lower(), i[1], year, i[0].upper()))
         
         f.write("\n### Not running :(\n")
         for i in not_offered:
-            f.write('[{0}](http://timetable.unsw.edu.au/{2}/{0}.html) [{1}](https://www.handbook.unsw.edu.au/postgraduate/courses/{2}/{0})\n'.format(i[0].lower(), i[1], year))
+            f.write('[{0}](http://timetable.unsw.edu.au/{2}/{3}.html) [{1}](https://www.handbook.unsw.edu.au/postgraduate/courses/{2}/{0})\n'.format(i[0].lower(), i[1], year, i[0].upper()))
     
     
 if __name__ == "__main__":
