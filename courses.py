@@ -22,7 +22,7 @@ def get_xml_tree(url):
     print("Sending http request...")
     page = requests.get(url)
     page.raise_for_status()
-    print(f"Get response with status code: {page.status_code}")
+    print(f"Got response with status code: {page.status_code}")
     tree = html.fromstring(page.content)
     return tree
 
@@ -101,10 +101,9 @@ if __name__ == "__main__":
     import sys
     import os
     
-    # add init msg
-    
-    if (len(sys.argv) < 3):
-        print("Usage: ./courses.py <year> <school> [campus(KENS as default)]")
+    if (len(sys.argv) < 4):
+        print("Usage: ./courses.py <year> <school> <campus>")
+        print("NOTE: currently only supports 'KENS' as the arg for campus")
         sys.exit(1)
         
     year   = sys.argv[1]
@@ -115,11 +114,11 @@ if __name__ == "__main__":
     url = constr_url(year, school, campus)
     tree = get_xml_tree(url)
     
-    print("extracting course lists...")
+    print("Extracting course lists...")
     build_course_lists(year, tree)
     
     fname = f"{year}-" + f"{school}{campus}-" + "courses.md"
-    print(f"output to {os.getcwd()}\{fname}")
+    print(f"Output to {os.getcwd()}\{fname}")
     out_put(fname, year)
     
     print("Bye :)")
